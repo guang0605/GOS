@@ -1,3 +1,16 @@
-require('Inspired')
-require('IOW')
-pcall( require, GetObjectName(GetMyHero()) )
+
+                        if CanUseSpell(myHero, _Q) == READY and QPred.HitChance == 1 and GoS:ValidTarget(target, GetCastRange(myHero,_Q)) and GotBuff(target, "brandablaze") == 1 and BrandMenu.Combo.SQ:Value() then                        
+                        CastSkillShot(_Q,QPred.PredPos.x,QPred.PredPos.y,QPred.PredPos.z)
+                        end
+                        if CanUseSpell(myHero, _Q) == READY and QPred.HitChance == 1 and GoS:ValidTarget(target, GetCastRange(myHero,_Q)) and BrandMenu.Combo.EQ:Value() then                        
+                        CastSkillShot(_Q,QPred.PredPos.x,QPred.PredPos.y,QPred.PredPos.z)
+                        end
+                        if CanUseSpell(myHero, _W) == READY and WPred.HitChance == 1 and GoS:ValidTarget(target, GetCastRange(myHero,_W)) and BrandMenu.Combo.W:Value() then
+                        CastSkillShot(_W,WPred.PredPos.x,WPred.PredPos.y,WPred.PredPos.z)
+						end
+						if CanUseSpell(myHero, _E) == READY and GoS:ValidTarget(target, GetCastRange(myHero,_E)) and BrandMenu.Combo.E:Value() then
+                        CastTargetSpell(target, _E)
+						end
+                        if CanUseSpell(myHero, _R) == READY and GoS:ValidTarget(target, GetCastRange(myHero,_R)) and BrandMenu.Combo.R:Value() then
+                        CastTargetSpell(target, _R)
+                        end
